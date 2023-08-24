@@ -53,6 +53,7 @@ submitElement.addEventListener('click', function (e) {
         document.querySelector('.offer_type').innerHTML = ticketType;
         document.querySelector('.carriage_number').innerHTML = Math.ceil(Math.random() * 10);
         document.querySelector('.cp_code').innerHTML = Math.ceil(Math.random() * 90000) + 9999;
+        document.querySelector('.distance').innerHTML = distance + "km";
         document.querySelector('.ticket_price').innerHTML = ticketPrice.toFixed(2);
         
         document.querySelector('table').classList.add('text-center');

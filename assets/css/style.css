@@ -51,3 +51,7 @@ label {
 .ticket > h2 {
     padding-bottom: 1rem;
 }
+
+tr, th, td {
+    padding: .25rem;
+}
