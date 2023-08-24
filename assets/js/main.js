@@ -10,6 +10,7 @@
 
     MILESTONE 1: Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra.
     La risposta finale (o output) sarà anch’essa da scrivere in solo console.
+    **DONE
 
     MILESTONE 2:
     Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
@@ -25,21 +26,25 @@ let ticketPrice;
 
 console.log('👉', distanceElement, ageElement, pricePerKm, ticketPrice);
 
-buttonElement.addEventListener('click', function() {
+buttonElement.addEventListener('click', function () {
     const userAge = Number(ageElement.value);
     const distance = Number(distanceElement.value);
 
-    console.log('❌', distance, 'km', userAge, 'anni');
-    ticketPrice = pricePerKm * distance; 
+    if (userAge >= 0 && distance > 0) {
+        console.log('❌', distance, 'km', userAge, 'anni');
+        ticketPrice = pricePerKm * distance;
 
-    
-    if (userAge < 18) {
-        ticketPrice -= ticketPrice * 0.2;
-    } else if (userAge >= 65) {
-        ticketPrice -= ticketPrice * 0.4;
+
+        if (userAge < 18) {
+            ticketPrice -= ticketPrice * 0.2;
+        } else if (userAge >= 65) {
+            ticketPrice -= ticketPrice * 0.4;
+        }
+        console.log('⭕ Prezzo finale del biglietto: ', ticketPrice);
+    } else {
+        console.log("Dati non inseriti correttamente");
     }
-    console.log('⭕ Prezzo finale del biglietto: ', ticketPrice);
-    
+
 });
 
 
